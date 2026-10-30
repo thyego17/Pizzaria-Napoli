@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pizzaria Napoli | A tradição italiana em cada fatia</title>
+<meta name="description" content="Pizzaria Napoli: receitas italianas tradicionais desde 1998. Veja o cardápio, a promoção da terça e monte seu pedido.">
+<meta name="theme-color" content="#170d0b">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍕</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#170d0b;--panel:#211310;--ink:#f3e8da;--muted:#b39a8c;--line:rgba(243,232,218,.15);--accent:#e0583f;
+--serif:"Cormorant Garamond",Georgia,serif;--sans:"Jost","Segoe UI",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{background:var(--bg);color:var(--ink);font:400 1.05rem/1.7 var(--sans);-webkit-font-smoothing:antialiased;padding-bottom:80px}
+a{color:inherit}button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 1.5rem}
+.label{font:500 .75rem var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+em{font-style:italic;color:var(--accent)}
+section{padding:5rem 0}
+h2{font:500 clamp(2.2rem,5vw,3.4rem)/1.05 var(--serif);margin:.6rem 0 1.8rem}
+header{position:sticky;top:0;z-index:10;background:rgba(23,13,11,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:66px}
+.logo{font:italic 500 1.5rem var(--serif);text-decoration:none}
+nav ul{display:flex;gap:1.6rem;list-style:none}
+nav a{font:500 .72rem var(--sans);letter-spacing:.18em;text-transform:uppercase;text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+.hero{padding:6.5rem 0 5.5rem;text-align:center}
+.hero h1{font:500 clamp(4rem,16vw,10rem)/.9 var(--serif);letter-spacing:-.03em;margin:1.2rem 0 1.4rem}
+.hero p{font:italic 400 clamp(1.4rem,3.4vw,2rem)/1.3 var(--serif);color:var(--muted);margin-bottom:2.2rem}
+.status{display:inline-flex;align-items:center;gap:.6rem;padding:.4rem 1rem;border:1px solid var(--line);border-radius:99px;font-size:.85rem;color:var(--muted)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--muted)}
+.status.open .dot{background:#7fbf7f}
+.btn{display:inline-block;padding:.9rem 2rem;border:1px solid var(--accent);background:none;cursor:pointer;text-decoration:none;font:500 .76rem var(--sans);letter-spacing:.2em;text-transform:uppercase;transition:background .25s,color .25s}
+.btn:hover,.btn.fill{background:var(--accent);color:#1b0c08}
+.btn.fill:hover{background:transparent;color:var(--ink)}
+.in{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.in:nth-child(2){animation-delay:.1s}.in:nth-child(3){animation-delay:.2s}.in:nth-child(4){animation-delay:.3s}
+@keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.two{display:grid;grid-template-columns:1fr 1.2fr;gap:4rem}
+.alt{background:var(--panel);border-block:1px solid var(--line)}
+.two p{color:var(--muted)}
+.big{font:italic 500 clamp(5rem,14vw,9rem)/.9 var(--serif);color:var(--accent)}
+.item{display:flex;align-items:center;gap:1rem;padding:1.1rem 0;border-top:1px solid var(--line)}
+.item:last-child{border-bottom:1px solid var(--line)}
+.item h3{font:500 1.7rem/1.2 var(--serif)}
+.item .fill{flex:1;border-bottom:1px dotted var(--line);transform:translateY(4px)}
+.price{font:500 1.5rem var(--serif);color:var(--accent)}
+.step{display:flex;align-items:center;gap:.6rem;margin-left:.6rem}
+.step button{width:32px;height:32px;background:none;border:1px solid var(--line);cursor:pointer}
+.step button:hover{border-color:var(--accent)}
+.step span{min-width:1.2ch;text-align:center}
+.promo{border:1px solid var(--accent);padding:2.4rem;text-align:center;position:relative;background:var(--bg)}
+.promo h3{font:500 clamp(2rem,5vw,3rem)/1.1 var(--serif)}
+.promo p{color:var(--muted);margin:.4rem 0 1rem}
+.promo .val{font:500 clamp(3rem,9vw,5rem)/1 var(--serif);color:var(--accent)}
+.badge{position:absolute;top:-.8rem;left:50%;transform:translateX(-50%);background:var(--accent);color:#1b0c08;padding:.2rem 1rem;font:500 .72rem var(--sans);letter-spacing:.18em;text-transform:uppercase}
+.social{display:flex;gap:1rem;flex-wrap:wrap;margin:1.6rem 0 1rem}
+address{font-style:normal;color:var(--muted)}
+address strong{display:block;font:500 1.6rem var(--serif);color:var(--ink)}
+footer{padding:2rem 0;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--panel);border-top:1px solid var(--accent);transform:translateY(110%);transition:transform .35s}
+.bar.on{transform:none}
+.bar .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;height:70px}
+.bar b{font:500 1.5rem var(--serif);color:var(--accent)}
+@media (max-width:760px){
+  section{padding:3.5rem 0}.hero{padding:4rem 0}
+  .two{grid-template-columns:1fr;gap:1.5rem}
+  nav{display:none}
+  .item{flex-wrap:wrap}.item .fill{display:none}.item h3{flex:1}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#inicio">Pizzaria Napoli</a>
+    <nav aria-label="Principal"><ul>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#cardapio">Cardápio</a></li>
+      <li><a href="#promocao">Promoção</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <div class="in"><span class="status" id="status"><span class="dot"></span><span id="status-txt">Verificando horário…</span></span></div>
+    <h1 class="in">Napoli<em>.</em></h1>
+    <div class="in">
+      <p>A tradição italiana em cada fatia.</p>
+      <a class="btn fill" href="#cardapio">Montar pedido</a>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="sobre">
+  <div class="wrap two">
+    <div>
+      <span class="label">Sobre nós</span>
+      <div class="big">1998</div>
+    </div>
+    <div>
+      <h2>Receitas <em>italianas</em> tradicionais.</h2>
+      <p>Desde 1998, a Pizzaria Napoli oferece receitas inspiradas na culinária italiana tradicional. Trabalhamos com ingredientes selecionados e preparo artesanal para garantir sabor, qualidade e uma experiência inesquecível para nossos clientes.</p>
+    </div>
+  </div>
+</section>
+
+<section id="cardapio">
+  <div class="wrap">
+    <span class="label">Cardápio</span>
+    <h2>Nosso cardápio</h2>
+    <div id="menu"></div>
+  </div>
+</section>
+
+<section class="alt" id="promocao">
+  <div class="wrap">
+    <div class="promo">
+      <span class="badge" id="badge" hidden>É hoje!</span>
+      <span class="label">Promoção</span>
+      <h3>Terça da Pizza</h3>
+      <p>2 pizzas grandes + refrigerante 2L</p>
+      <div class="val">R$ 89,90</div>
+    </div>
+  </div>
+</section>
+
+<section id="contato">
+  <div class="wrap two">
+    <div>
+      <span class="label">Contato</span>
+      <h2>Venha nos visitar</h2>
+    </div>
+    <div>
+      <address><strong>Rua Giuseppe Verdi, 145</strong>Centro<br>Terça a domingo, das 18h às 23h</address>
+      <div class="social">
+        <a class="btn" href="tel:+5511988888888">Telefone</a>
+        <a class="btn" href="mailto:contato@pizzarianapoli.com">E-mail</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Rua+Giuseppe+Verdi+145+Centro">Mapa</a>
+      </div>
+      <address>(11) 98888-8888<br>contato@pizzarianapoli.com</address>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Pizzaria Napoli</span>
+    <span>Site desenvolvido por <a href="https://thyego17.github.io/Portif-lio/">Thyego</a></span>
+  </div>
+</footer>
+
+<div class="bar" id="bar">
+  <div class="wrap">
+    <span>Seu pedido <b id="total">R$ 0,00</b></span>
+    <a class="btn fill" id="send" href="#">Enviar no WhatsApp</a>
+  </div>
+</div>
+
+<script>
+const P=[["Margherita",45],["Calabresa",50],["Portuguesa",55],["Frango com Catupiry",60],["Quatro Queijos",58]];
+const q=P.map(()=>0);
+const brl=n=>n.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+const menu=document.getElementById("menu"),bar=document.getElementById("bar");
+function render(){
+  menu.innerHTML=P.map((p,i)=>`<div class="item"><h3>${p[0]}</h3><span class="fill"></span><span class="price">${brl(p[1])}</span><div class="step"><button data-i="${i}" data-d="-1" aria-label="Remover ${p[0]}">−</button><span aria-live="polite">${q[i]}</span><button data-i="${i}" data-d="1" aria-label="Adicionar ${p[0]}">+</button></div></div>`).join("");
+  const total=P.reduce((s,p,i)=>s+p[1]*q[i],0);
+  document.getElementById("total").textContent=brl(total);
+  bar.classList.toggle("on",total>0);
+  const lines=P.map((p,i)=>q[i]?`${q[i]}x ${p[0]}`:null).filter(Boolean);
+  const msg=`Olá! Gostaria de fazer um pedido:\n${lines.join("\n")}\nTotal: ${brl(total)}`;
+  document.getElementById("send").href="https://wa.me/5511988888888?text="+encodeURIComponent(msg);
+}
+menu.addEventListener("click",e=>{
+  const b=e.target.closest("button");if(!b)return;
+  const i=+b.dataset.i;q[i]=Math.max(0,q[i]+ +b.dataset.d);render();
+  menu.querySelector(`button[data-i="${i}"][data-d="${b.dataset.d}"]`).focus();
+});
+render();
+
+const now=new Date(),d=now.getDay(),h=now.getHours()+now.getMinutes()/60;
+const open=d!==1&&h>=18&&h<23;
+document.getElementById("status").classList.toggle("open",open);
+document.getElementById("status-txt").textContent=open?"Aberto agora":(d===1?"Fechado às segundas":"Fechado agora");
+if(d===2)document.getElementById("badge").hidden=false;
+</script>
+</body>
+</html>
